@@ -1,11 +1,12 @@
+#importing the required modules
 from traceback import print_tb
 from cvzone.HandTrackingModule import HandDetector
 from cvzone.SerialModule import SerialObject
 import cv2
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0) #allowing webcam to detect the hand
 detector = HandDetector(detectionCon=0.8)
-mySerial = SerialObject("COM14")
+mySerial = SerialObject("COM14") #ardunio port 
 while True:
     # Get image frame
     success, img = cap.read()
